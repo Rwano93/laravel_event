@@ -38,14 +38,14 @@ return new class extends Migration
         });
 
         Schema::create('reservation', function (Blueprint $table) {
-            $table->interger('ref_evenement')->primary();
-            $table->interger('ref_user')->primary();
+            $table->integer('ref_evenement')->primary();
+            $table->integer('ref_user')->primary();
             $table->foreign('ref_evenement')->references('id_evenement')->on('evenement');
             $table->foreign('ref_user')->references('id')->on('users');
         });
 
         Schema::create('role', function (Blueprint $table) {
-            $table->interger('id_role')->primary();
+            $table->integer('id_role')->primary();
             $table->string('libelle', 255)->nullable();
         });
 
@@ -54,7 +54,7 @@ return new class extends Migration
             $table->string('titre', 45)->nullable();
             $table->text('description')->nullable();
             $table->dateTime('date');
-            $table->int('place', 1000);
+            $table->integer('place', 1000);
             $table->timestamps();
         });
 
